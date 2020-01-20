@@ -55,3 +55,5 @@ So I added another condition for ignoriong the first x numbers which gave the fi
 * Quite big : 3.709879ms
 * Also big  : 10.440084ms
 
+![alt score](storage/screenshot/execution.png)
+![alt score](storage/screenshot/practice2020.png)
