@@ -3,7 +3,7 @@ Best solution for the practice round with maximum possible scores.
 This algorithm will work for the given data sets and probably others but will need improvements to be more general.
 
 ## Problem statement
-See "slice.pdf".
+See `storage/files/slice.pdf`.
 
 ## Algorithm
 From my prespective this problem was easier than what we used to in previously.
@@ -55,5 +55,5 @@ So I added another condition for ignoriong the first x numbers which gave the fi
 * Quite big : 3.709879ms
 * Also big  : 10.440084ms
 
-![alt score](storage/screenshot/execution.png)
-![alt score](storage/screenshot/practice2020.png)
+![alt score](storage/files/execution.png)
+![alt score](storage/files/practice2020.png)
