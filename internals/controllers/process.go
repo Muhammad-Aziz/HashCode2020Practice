@@ -5,9 +5,11 @@ import (
 	"hash_code_2020/internals/handlers"
 	"hash_code_2020/pkg/file_management"
 	"strings"
+	"time"
 )
 
 func Process(file_name string) error {
+	start := time.Now()
 	// read data from inout file
 	data, err := file_management.Read(fmt.Sprintf("./storage/input/%s.in", file_name))
 	if err != nil {
@@ -51,8 +53,6 @@ func Process(file_name string) error {
 		}
 	}
 
-	fmt.Println(fmt.Sprintf("%s :	%d (%d)", file_name, final_sum, len(final_used)))
-
 	// write
 	str := ""
 	for i := len(final_used) - 1; i >= 0; i-- {
@@ -60,5 +60,9 @@ func Process(file_name string) error {
 	}
 	str = strings.Trim(str, " ")
 	out := fmt.Sprintf("%d\n%s", len(final_used), str)
-	return file_management.Write(out, fmt.Sprintf("./storage/output/%s.out", file_name))
+	err = file_management.Write(out, fmt.Sprintf("./storage/output/%s.out", file_name))
+
+	elapsed := time.Since(start)
+	fmt.Println(fmt.Sprintf("%s :	%d (%s)", file_name, final_sum, elapsed))
+	return err
 }
