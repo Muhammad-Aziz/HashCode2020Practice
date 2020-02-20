@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"fmt"
-	"hash_code_2020/internals/handlers"
-	"hash_code_2020/pkg/file_management"
+	"hash_code_2020/practice/internals/handlers"
+	"hash_code_2020/practice/pkg/file_management"
 	"strings"
 	"time"
 )
@@ -25,30 +25,14 @@ func Process(file_name string) error {
 	// process
 	final_sum := 0
 	final_used := []int{}
-	limit_found := false
 
-	for i := dataObj.PizzaCount; i >= 0; i-- {
-		sum, used, limit := handlers.Sum(dataObj, i, true)
+	for i := dataObj.PizzaCount; i > 0; i-- {
+		sum, used, limit := handlers.Sum(dataObj, i)
 		if sum > final_sum {
 			final_sum = sum
 			final_used = *used
 			if limit == true {
-				limit_found = true
 				break
-			}
-		}
-	}
-
-	if limit_found == false {
-		for i := 1; i <= dataObj.PizzaCount; i++ {
-			sum, used, limit := handlers.Sum(dataObj, i, false)
-			if sum > final_sum {
-				final_sum = sum
-				final_used = *used
-				if limit == true {
-					limit_found = true
-					break
-				}
 			}
 		}
 	}

@@ -37,8 +37,8 @@ Ok, we are almost there. Lets see what does this data set has:
 Our current algorithm is adding 95 and 4, ignoring the first (`last`) 95 is useless.
 We need to get past the 95 to use 82 which will give the best score with 18.
 
-I don't want any thing complicated like comparing numbers to be ignored
-So I added another condition for ignoriong the first x numbers which gave the final results.
+So, instead of skipping using a slice position, I need to skip any value equal to a that skipped position value.
+Thus skipping both 95 numbers.
 
 ## Results
 ### Scores for each data set
@@ -49,11 +49,11 @@ So I added another condition for ignoriong the first x numbers which gave the fi
 * Also big  : 505000000
 
 ### Execution time
-* Example   : 165.504µs
-* Small     : 64.226µs
-* Medium    : 64.226µs
-* Quite big : 3.709879ms
-* Also big  : 10.440084ms
+* Example   : 175.617µs
+* Small     : 74.326µs
+* Medium    : 89.998µs
+* Quite big : 9.603146ms
+* Also big  : 269.230537ms
 
 ![alt score](storage/files/execution.png)
 ![alt score](storage/files/practice2020.png)

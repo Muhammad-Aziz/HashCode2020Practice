@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"errors"
-	"hash_code_2020/internals/models"
+	"hash_code_2020/practice/internals/models"
 	"strconv"
 	"strings"
 )

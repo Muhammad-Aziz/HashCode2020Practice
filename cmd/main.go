@@ -1,6 +1,6 @@
 package main
 
-import "hash_code_2020/internals/controllers"
+import "hash_code_2020/practice/internals/controllers"
 
 func main() {
 	// set file names to be used
